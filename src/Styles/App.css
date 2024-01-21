@@ -1,0 +1,21 @@
+/* styles.css */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Additional styles or customizations can be added here */
+body {
+  font-family: Poppins;
+  background-color: #00040f;
+  color: #fff;
+}
+.tolist {
+  border-radius: 20px 0px 0px 20px;
+}
+.xx {
+  border-radius: 50px;
+  background: linear-gradient(225deg, #cacaca, #f0f0f0);
+  box-shadow: -20px 20px 67px #bebebe, 20px -20px 67px #ffffff;
+}
+
+
