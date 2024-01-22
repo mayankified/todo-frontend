@@ -7,7 +7,7 @@ export const signup = createAsyncThunk(
   async (userData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/v1/user/register",
+        "https://tinudo-app.onrender.com/api/v1/user/register",
         userData,{withCredentials:true,}
       );
       return { userData, responseData: response.data };
@@ -21,7 +21,7 @@ export const login = createAsyncThunk(
   "login",
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/v1/user/login", userData);
+      const response = await axios.post("https://tinudo-app.onrender.com/api/v1/user/login", userData);
       return { userData, responseData: response.data };
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -33,7 +33,7 @@ export const getuser = createAsyncThunk(
   "getuser",
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/v1/user/myprofile", userData);
+      const response = await axios.post("https://tinudo-app.onrender.com/api/v1/user/myprofile", userData);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -45,7 +45,7 @@ export const logout = createAsyncThunk(
   "logout",
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/v1/user/logout");
+      const response = await axios.post("https://tinudo-app.onrender.com/api/v1/user/logout");
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

@@ -7,7 +7,7 @@ export const createTask = createAsyncThunk(
   async (taskData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/v1/task/create",
+        "https://tinudo-app.onrender.com/api/v1/task/create",
         taskData,
         { withCredentials: true }
       );
@@ -23,7 +23,7 @@ export const fetchTasks = createAsyncThunk(
   async (user,{ rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/v1/task/gettask",user
+        "https://tinudo-app.onrender.com/api/v1/task/gettask",user
       );
       return response.data.data;
     } catch (error) {
@@ -37,7 +37,7 @@ export const updateTask = createAsyncThunk(
   async (taskData,{ rejectWithValue }) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/v1/task/update`,taskData
+        `https://tinudo-app.onrender.com/api/v1/task/update`,taskData
       );
       return response.data;
     } catch (error) {
@@ -51,7 +51,7 @@ export const deleteTask = createAsyncThunk(
   async (task, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/v1/task/delete',task
+        'https://tinudo-app.onrender.com/api/v1/task/delete',task
       );
       return response.data;
     } catch (error) {
