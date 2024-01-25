@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// Updated error handling in thunks
+
 export const signup = createAsyncThunk(
   "signup",
   async (userData, { rejectWithValue }) => {
@@ -98,7 +98,7 @@ export const User = createSlice({
       state.login = true;
     });
 
-    // Handle the pending state for both login and signup
+ 
     builder.addMatcher(
       (action) => [login.pending, signup.pending,logout.pending,getuser.pending].includes(action.type),
       (state) => {
@@ -107,7 +107,7 @@ export const User = createSlice({
       }
     );
 
-    // Handle the rejected state for both login and signup
+
     builder.addMatcher(
       (action) => [login.rejected, signup.rejected,getuser.rejected,logout.rejected].includes(action.type),
       (state, action) => {
